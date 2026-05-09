@@ -19,7 +19,8 @@
     "build": "tsc -p tsconfig.build.json",
     "format": "biome format --write",
     "lint": "biome lint --write",
-    "check": "biome check"
+    "check": "biome check",
+    "check:write": "biome check --write"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.14",
