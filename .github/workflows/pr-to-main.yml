@@ -94,3 +94,6 @@ jobs:
             git diff
             exit 1
           fi
+
+      - name: Test
+        run: bun test
