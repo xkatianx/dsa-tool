@@ -7,5 +7,5 @@
   "[typescript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
-  "cSpell.words": ["deque", "Fenwick", "Gusfield", "Manacher"]
+  "cSpell.words": ["BFPRT", "deque", "Fenwick", "Gusfield", "Manacher"]
 }
