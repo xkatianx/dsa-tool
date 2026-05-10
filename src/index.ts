@@ -1,4 +1,2 @@
-/** Example export — replace or extend with your DSA utilities. */
-export function greet(name: string = "world"): string {
-  return `Hello, ${name}!`;
-}
+export { Deque } from "./list/deque.js";
+export { Stack } from "./list/stack.js";
