@@ -5,3 +5,7 @@
  * they're equal, and a positive value otherwise.
  */
 export type CompareFn<T> = (a: T, b: T) => number;
+
+export function unreachable(): never {
+  throw new Error("Unreachable code");
+}
