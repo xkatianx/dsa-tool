@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from "bun:test";
-import { Deque } from "./deque";
+import { Deque } from "./deque.js";
 
 describe("Deque", () => {
   let deque: Deque<number>;
