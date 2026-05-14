@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from "bun:test";
-import { MinStack } from "./minStack";
+import { MinStack } from "./minStack.js";
 
 describe("MinStack", () => {
   let minStack: MinStack<number>;

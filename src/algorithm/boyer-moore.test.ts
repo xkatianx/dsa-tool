@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { boyerMoore } from "./boyer-moore";
+import { boyerMoore } from "./boyer-moore.js";
 
 describe("Boyer-Moore (majority vote)", () => {
   it("returns the element that appears more than n/2 times", () => {

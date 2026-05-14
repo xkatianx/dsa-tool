@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from "bun:test";
-import { MinDeque } from "./minDeque";
+import { MinDeque } from "./minDeque.js";
 
 describe("MinDeque", () => {
   let minDeque: MinDeque<number>;

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { minMaxK } from "./minMaxK";
+import { minMaxK } from "./minMaxK.js";
 
 describe("minMaxK", () => {
   it("should return the first k min/max unique values in order with their amounts", () => {

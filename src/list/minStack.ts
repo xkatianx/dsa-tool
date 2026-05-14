@@ -1,5 +1,5 @@
-import type { CompareFn } from "../type";
-import { Stack } from "./stack";
+import type { CompareFn } from "../type.js";
+import { Stack } from "./stack.js";
 
 export class MinStack<T> extends Stack<T> {
   protected mins: T[] = [];

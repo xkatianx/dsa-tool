@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { mergeSort } from "./mergeSort";
+import { mergeSort } from "./mergeSort.js";
 
 describe("mergeSort", () => {
   const numberCompare = (a: number, b: number) => a - b;

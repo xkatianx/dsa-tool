@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { bfprt, median } from "./bfprt";
+import { bfprt, median } from "./bfprt.js";
 
 describe("BFPRT (Median of Medians) Algorithm", () => {
   it("Finds the k-th smallest element in an unsorted array", () => {

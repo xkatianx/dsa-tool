@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from "bun:test";
-import { MonotonicStack } from "./monotonicStack";
+import { MonotonicStack } from "./monotonicStack.js";
 
 describe("MonotonicStack", () => {
   /** Pop smaller tops while pushing larger values → strictly decreasing from bottom to top. */

@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from "bun:test";
-import { Stack } from "./stack";
+import { Stack } from "./stack.js";
 
 describe("Stack", () => {
   let stack: Stack<number>;

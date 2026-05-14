@@ -1,4 +1,4 @@
-import { Stack } from "./stack";
+import { Stack } from "./stack.js";
 
 export class MonotonicStack<T> extends Stack<T> {
   /** The callback to call just after the top element was popped by pushing.

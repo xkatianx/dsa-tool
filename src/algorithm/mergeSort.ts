@@ -1,4 +1,4 @@
-import type { CompareFn } from "../type";
+import type { CompareFn } from "../type.js";
 
 /** Merge Sort
  *

@@ -1,4 +1,4 @@
-import { unreachable } from "../type";
+import { unreachable } from "../type.js";
 
 const fn = {
   min: (a?: number, b?: number) => Math.min(a ?? Infinity, b ?? Infinity),

@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from "bun:test";
-import { FenwickTree } from "./FenwickTree";
+import { FenwickTree } from "./FenwickTree.js";
 
 describe("Fenwick Tree", () => {
   let bit: FenwickTree;

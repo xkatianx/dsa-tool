@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { SegmentTree } from "./SegmentTree";
+import { SegmentTree } from "./SegmentTree.js";
 
 describe("SegmentTree", () => {
   describe("min mode", () => {

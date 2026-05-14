@@ -1,6 +1,6 @@
-import type { CompareFn } from "../type";
-import { Deque } from "./deque";
-import { MinStack } from "./minStack";
+import type { CompareFn } from "../type.js";
+import { Deque } from "./deque.js";
+import { MinStack } from "./minStack.js";
 
 export class MinDeque<T> extends Deque<T> {
   protected override left: MinStack<T>;
