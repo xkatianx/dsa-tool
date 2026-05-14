@@ -176,7 +176,8 @@ describe("SegmentTree", () => {
           for (let i = l; i < r; i++) arr[i] = v;
         } else {
           tree.addRange(l, r, v);
-          for (let i = l; i < r; i++) arr[i] += v;
+          // biome-ignore lint/style/noNonNullAssertion: by range of `r`
+          for (let i = l; i < r; i++) arr[i]! += v;
         }
         const ql = Math.floor(Math.random() * n);
         const qr = ql + Math.floor(Math.random() * (n - ql)) + 1;

@@ -44,7 +44,8 @@ export class FenwickTree {
     if (index < 1 || index >= this.tree.length)
       throw new Error("Index out of bounds.");
     for (; index < this.tree.length; index += index & -index) {
-      this.tree[index] += value;
+      // biome-ignore lint/style/noNonNullAssertion: by condition
+      this.tree[index]! += value;
     }
   }
 

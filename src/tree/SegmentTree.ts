@@ -1,3 +1,5 @@
+import { unreachable } from "../type";
+
 const fn = {
   min: (a?: number, b?: number) => Math.min(a ?? Infinity, b ?? Infinity),
   max: (a?: number, b?: number) => Math.max(a ?? -Infinity, b ?? -Infinity),
@@ -60,12 +62,15 @@ export class SegmentTree {
   }
 
   private applyAdd(idx: number, delta: number, len: number): void {
+    if (this.values[idx] == null) unreachable();
+    if (this.lazySet[idx] == null) unreachable();
+    if (this.lazyAdd[idx] == null) unreachable();
+
     if (this.mode === "sum") {
       this.values[idx] += delta * len;
     } else {
       this.values[idx] += delta;
     }
-
     if (!Number.isNaN(this.lazySet[idx])) {
       this.lazySet[idx] += delta;
     } else if (Number.isNaN(this.lazyAdd[idx])) {

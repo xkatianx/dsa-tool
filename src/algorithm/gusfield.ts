@@ -18,7 +18,7 @@ export function gusfield(str: string) {
     if (i <= right) dp[i] = Math.min(right - i + 1, dp[i - left]!);
     // either stop immediately or scanning new chars
     // biome-ignore lint/style/noNonNullAssertion: i < str.length
-    while (str[dp[i]!] === (str[i + dp[i]!] ?? "xx")) dp[i]++;
+    while (str[dp[i]!] === (str[i + dp[i]!] ?? "xx")) dp[i]!++;
     // update rightmost
     // biome-ignore lint/style/noNonNullAssertion: i < str.length
     if (i + dp[i]! - 1 > right) [left, right] = [i, i + dp[i]! - 1];
