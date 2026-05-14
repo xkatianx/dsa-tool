@@ -16,6 +16,9 @@ permissions:
 jobs:
   verify-and-fix:
     runs-on: ubuntu-latest
+    env:
+      # Used to push only when local commits exist (separate biome/build commits, single push).
+      PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
     steps:
       - name: Checkout PR head
         uses: actions/checkout@v4
@@ -56,7 +59,7 @@ jobs:
         if: github.event.pull_request.head.repo.full_name != github.repository
         run: bun run check
 
-      - name: Commit Biome fixes
+      - name: Commit Biome fixes (same-repo — no push)
         if: github.event.pull_request.head.repo.full_name == github.repository
         run: |
           git config user.name "github-actions[bot]"
@@ -66,13 +69,12 @@ jobs:
             echo "No Biome changes."
           else
             git commit -m "🤖 biome fix"
-            git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" "HEAD:refs/heads/${{ github.event.pull_request.head.ref }}"
           fi
 
       - name: Build
         run: bun run build
 
-      - name: Commit build artifacts
+      - name: Commit build artifacts (same-repo — no push)
         if: github.event.pull_request.head.repo.full_name == github.repository
         run: |
           git config user.name "github-actions[bot]"
@@ -82,6 +84,15 @@ jobs:
             echo "No build output changes."
           else
             git commit -m "🤖 build files"
+          fi
+
+      # Single push after all local commits → at most one synchronize from this job.
+      - name: Push commits to PR branch (same-repo)
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        run: |
+          if [ "$(git rev-parse HEAD)" = "$PR_HEAD_SHA" ]; then
+            echo "Nothing to push."
+          else
             git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" "HEAD:refs/heads/${{ github.event.pull_request.head.ref }}"
           fi
 
